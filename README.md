@@ -47,7 +47,7 @@ The application supports **Role-Based Access Control** for Admin and User roles.
 ![Admin Dashboard](screenshots/dashboard.png)
 
 ### 📝 Skill
-![Skill](screenshots/skill-list.png)
+![Skill](screenshots/skill.png)
 
 ### 📝 Job Posting Form
 ![Job Posting Form](screenshots/job-form.png)
