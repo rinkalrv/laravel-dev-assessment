@@ -30,7 +30,7 @@
                                     <th scope="row" class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap dark:text-white">{{ $job['title'] }}</th>
                                     <td class="px-4 py-3 whitespace-nowrap">{{ str($job['description'])->words(7) }}</td>
                                     <td class="px-4 py-3 text-center">
-                                        <img src="{{ $job['company_logo'] }}" class="h-12 w-auto block mx-auto" alt="{{ $job['company_name'] }}">
+                                        <img src="{{ asset('storage/' . $job->company_logo) }}" class="h-12 w-auto mx-auto" />
                                     </td>
                                     <td><span class="font-medium text-gray-900">{{ $job['company_name'] }}</span></td>  
                                     <td class="px-4 py-3">{{ $job['experience'] }}</td>
@@ -51,12 +51,15 @@
                                         </div>
                                     </td>
                                     <td class="px-4 py-3 flex items-center justify-end">
-                                        <a href="#" class="text-sm px-3 py-1.5 rounded hover:bg-slate-100 transition-colors text-red-500">Delete</a>
+                                        <a href="#" wire:click.prevent="delete({{ $job->id }})" class="text-sm px-3 py-1.5 rounded hover:bg-slate-100 transition-colors text-red-500">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+                <div class="mt-4">
+                    {{ $jobs->links() }}
                 </div>
             </div>
         </div>
